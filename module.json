@@ -1,0 +1,66 @@
+{
+    "name": "module",
+    "functions": [
+      {
+        "name": "LOG",
+        "args": ["x"],
+        "types": ["int"],
+        "returns": "int"
+
+      },
+      {
+        "name": "sayhello",
+        "args": ["name"],
+        "types": ["str"],
+        "returns": "nil"
+      },
+      {
+        "name": "randomList",
+        "args": ["size"],
+        "types": ["int"],
+        "returns": "list"
+      }
+    ],
+    "classes": [
+        {
+            "name": "Car",
+            "properties": 
+               ["model","color","fuel"]
+            ,
+            "functions":[
+                {
+                  "name": "__construct__",
+                  "args": [],
+                  "types": [],
+                  "returns": "nil"
+                },
+                {
+                    "name": "__del__",
+                    "args": [],
+                    "types": [],
+                    "returns": "nil"
+                },
+                {
+                    "name": "start",
+                    "args": [],
+                    "types": [],
+                    "returns": "nil"
+                },
+                {
+                    "name": "run",
+                    "args": ["miles"],
+                    "types": ["double"],
+                    "returns": "nil"
+                },
+                {
+                    "name": "stop",
+                    "args": [],
+                    "types": [],
+
+                    "returns": "nil"
+                }
+            ]
+        }
+    ]
+  
+}
