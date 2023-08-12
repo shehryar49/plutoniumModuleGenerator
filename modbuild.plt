@@ -271,6 +271,7 @@ using namespace std;\nPltObject nil;\n"
 
 PltObject init()
 {
+  nil.type = PLT_NIL;
   Module* m = vm_allocModule();"
   var functions = dict["functions"]
   var impl = ""
@@ -366,13 +367,11 @@ function askAndBuild()
     var file = open("draft.json","w")
     write(str,file)
     close(file)
-    var content = read(open("draft.json","r"))
-    var dict = json.loads(content)
 
     var header = buildHeader(dict)
     var cpp = buildCpp(dict)
 
-    var file = open(dict["name"]+".h","w")
+    file = open(dict["name"]+".h","w")
     write(header,file)
     close(file)
     file = open(dict["name"]+".cpp","w")
