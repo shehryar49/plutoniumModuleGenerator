@@ -7,6 +7,11 @@ import json
 function buildHeader(var dict)
 {
   var header = "#include \"PltObject.h\"
+#ifdef _WIN32
+  #define EXPORT __declspec(dllexport)
+#else
+  #edefine EXPORt
+#endif
 extern \"C\"
 {
   PltObject init();
@@ -16,7 +21,7 @@ extern \"C\"
   {
     foreach(var f: fn)
     {
-        header+="\n  PltObject "+f["name"]+"(PltObject*,int32_t);"
+        header+="\n  EXPORT PltObject "+f["name"]+"(PltObject*,int32_t);"
     }
   }
   var klasses = dict["classes"]
@@ -380,7 +385,7 @@ function askAndBuild()
 }
 askAndBuild()
 # Uncomment the following to directly build from json
-#var content = read(open("module.json","r"))
+#var content = read(open("draft.json","r"))
 #var dict = json.loads(content)
 
 #var header = buildHeader(dict)
