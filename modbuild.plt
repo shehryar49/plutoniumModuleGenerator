@@ -32,7 +32,7 @@ extern \"C\"
       header += "\n  //"+klass["name"]+" methods"
       foreach(var methods: klass["functions"])
       {
-        header += format("\n  PltObject %__"+methods["name"]+"(PltObject*,int32_t);",klass["name"])
+        header += format("\n  EXPORT PltObject %__"+methods["name"]+"(PltObject*,int32_t);",klass["name"])
       }
     }
   }
