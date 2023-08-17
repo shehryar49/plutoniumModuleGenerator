@@ -10,7 +10,7 @@ function buildHeader(var dict)
 #ifdef _WIN32
   #define EXPORT __declspec(dllexport)
 #else
-  #edefine EXPORt
+  #define EXPORT
 #endif
 extern \"C\"
 {
